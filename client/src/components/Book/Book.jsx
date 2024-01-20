@@ -1,5 +1,6 @@
 import { useState } from "react";
 import HTMLFlipBook from "react-pageflip"
+import "./Book.css"
 
 export const Book = () => {
 
@@ -40,7 +41,7 @@ export const Book = () => {
         <div className="demoPage" key={id}>
           <div className="absolute bottom-3 bg-white left-1/2 transform -translate-x-1/2 w-[70%] h-1/5 opacity-80">
             <div className="flex items-center justify-center h-full text-black">
-              <p>{pages.sentences[key]}</p>
+              <p className="text">{pages.sentences[key]}</p>
             </div>
           </div>
           <img src={pages.images[key]} alt={`Image ${key}`} className="w-full h-full" />
