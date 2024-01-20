@@ -1,6 +1,5 @@
 import { useState } from "react";
 import HTMLFlipBook from "react-pageflip"
-import { Page } from "./Page";
 
 export const Book = () => {
 
@@ -39,7 +38,7 @@ export const Book = () => {
     <HTMLFlipBook width={620} height={620}>
       {keys.map((key, id) => (
         <div className="demoPage" key={id}>
-          <div className="absolute bottom-0 w-full bg-white h-1/5 opacity-80">
+          <div className="absolute bottom-3 bg-white left-1/2 transform -translate-x-1/2 w-[70%] h-1/5 opacity-80">
             <div className="flex items-center justify-center h-full text-black">
               <p>{pages.sentences[key]}</p>
             </div>
