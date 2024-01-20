@@ -51,16 +51,16 @@ const test =
     }
 }
 
-  const keys = Object.keys(test.images);
+  const keys = Object.keys(pages.images);
 
   return (
     <div className="flex items-center justify-center min-h-screen">
     <HTMLFlipBook width={620} height={620}>
       {keys.map((key, id) => (
         <div className="demoPage" key={id}>
-          <div className="absolute bottom-3 bg-white left-1/2 transform -translate-x-1/2 w-[70%] h-1/5 opacity-80">
-            <div className="flex items-center justify-center h-full text-black">
-              <p className="text">{pages.sentences[key]}</p>
+          <div className="absolute bottom-6 bg-white left-1/2 transform -translate-x-1/2 w-[80%] h-[20%] bg-[#fffff0] rounded-xl">
+            <div className="flex items-center justify-center h-full p-6 text-black text-wrap ">
+              <p className="text text-[20px]">{test.story.phrases[key]}.</p>
             </div>
           </div>
           <img src={pages.images[key]} alt={`Image ${key}`} className="w-full h-full" />
