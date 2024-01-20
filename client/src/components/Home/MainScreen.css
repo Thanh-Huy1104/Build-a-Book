@@ -1,3 +1,57 @@
+@font-face {
+  font-family: Willkids;
+  src: url(../../assets/Willkids.otf) format("opentype");
+}
+
+@font-face {
+  font-family: Peachcake;
+  src: url(../../assets/Peachcake.otf) format("opentype");
+}
+
+@font-face {
+  font-family: Superdisco;
+  src: url(../../assets/Superdisco.ttf) format("opentype");
+}
+
 .curved-text {
-  fill: white
+  fill: white;
+  text-shadow: 5px 5px #0000006e;
+}
+
+
+.MainScreen--title2{
+  font-family: Peachcake;
+  font-size: 2.7vw;
+  position: absolute;
+  top: 250px;
+  text-shadow: 2px 2px #0000006e;
+}
+
+.MainScreen--button{
+  background-color: #ffe941e2;
+  color: #0272fc;
+  font-family: Superdisco;
+  font-size: 40px;
+  text-align: center;
+  border-radius: 25px;
+  padding: 15px 60px;
+  position:absolute;
+  top: 350px;
+  box-shadow: 5px 5px #0000006e;
+  transition: transform 0.3s ease-in-out;
+}
+
+.MainScreen--button:hover{
+  transform: translateY(-10px) scale(1.03);
+}
+
+.MainScreen--input{
+  color:black;
+  position: absolute;
+  top: 350px;
+  height: 75px;
+  width: 500px;
+  font-family: Superdisco;
+  font-size: 40px;
+  
 }
