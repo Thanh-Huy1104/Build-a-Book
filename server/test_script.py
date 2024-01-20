@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 # Load environment variables from .env file
 load_dotenv()
 
-def stability_call(text_prompts):
+def stability_call():
     api_key = os.getenv("STABILITY_API_KEY")
     if api_key is None:
         raise Exception("API_KEY not found in the .env file")
@@ -23,7 +23,7 @@ def stability_call(text_prompts):
         "samples": 1,
         "text_prompts": [
             {
-                "text": f"{text_prompts}, children book style, colourful,",
+                "text": "A monkey swinging in a tree, children book style, colourful,",
                 "weight": 1
             },
             {
@@ -50,12 +50,9 @@ def stability_call(text_prompts):
     images = []
     for i, image in enumerate(data["artifacts"]):
         img_base64 = image["base64"]
-        with open(f'./out/txt2img_{image["seed"]}.png', "wb") as f:
-            f.write(base64.b64decode(img_base64))
-        images.append({"base64": img_base64})
+        images.append({"seed": image["seed"], "base64": img_base64})
 
     return images  # Return the list of image data as JSON
 
 if __name__ == "__main__":
-    text_prompts = "Once upon a time in a magical land, there lived a friendly dragon."
-    stability_call(text_prompts)
+    stability_call()
