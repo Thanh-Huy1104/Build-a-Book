@@ -14,7 +14,6 @@ export const MainScreen = () => {
     setIsEditing(false);
   }
 
-
   return (
     <div className="relative w-screen h-screen overflow-hidden">
       <img src={bgImage} alt="Background Image" className="object-cover w-full h-full" />
@@ -32,11 +31,16 @@ export const MainScreen = () => {
         </svg>
         <h1 className="MainScreen--title2">You Dream It, We Write It</h1>
 
+
+        <div className="Button--div">
         {isEditing ? (
           <input className="MainScreen--input" type="text" onBlur={handleInputBlur}/>
           ) : (
           <button className="MainScreen--button" onClick={handleClick}>Create your Story</button>
           )} 
+        </div>
+
+
       </div>
       <div className="absolute mb-4 text-white transform -translate-x-1/2 bottom-2 left-1/2">
         <img src={kidImage} alt="kid image" className="h-[300px] w-[445px] object-cover" />

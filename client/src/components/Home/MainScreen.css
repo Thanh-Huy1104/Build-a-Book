@@ -35,23 +35,30 @@
   text-align: center;
   border-radius: 25px;
   padding: 15px 60px;
-  position:absolute;
-  top: 350px;
   box-shadow: 5px 5px #0000006e;
-  transition: transform 0.3s ease-in-out;
+  transition: opacity 3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 .MainScreen--button:hover{
   transform: translateY(-10px) scale(1.03);
 }
 
+
 .MainScreen--input{
   color:black;
-  position: absolute;
-  top: 350px;
-  height: 75px;
+  height: 100px;
   width: 500px;
   font-family: Superdisco;
   font-size: 40px;
-  
+  border-radius: 25px;
+}
+
+
+.MainScreen--input[type=text]{
+  padding: 20px;
+}
+
+.Button--div{
+  position: absolute;
+  top: 350px;
 }
