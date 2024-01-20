@@ -1,0 +1,16 @@
+@font-face {
+  font-family: LfL;
+  src: url("../../assets/Letters for Learners.ttf") format("truetype");
+}
+
+.text {
+  font-family: LfL, Arial, sans-serif; /* Provide fallback fonts */
+  line-height: 1.5;
+  font-size: 1.5em;
+  font-weight: 600;
+  text-align: justify;
+  text-justify: inter-word;
+  margin: 0;
+  padding: 0;
+  color: #000;
+}
