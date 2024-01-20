@@ -38,9 +38,9 @@ export const Book = () => {
     <div className="flex items-center justify-center min-h-screen">
     <HTMLFlipBook width={620} height={620}>
       {keys.map((key, id) => (
-        <div className="items-center justify-center demoPage" key={id}>
-          <div className="absolute bottom-0 items-center justify-center mx-auto bg-white h-1/5 opacity-80">
-            <div className="flex items-center  w-[60%] justify-center h-full text-black">
+        <div className="demoPage" key={id}>
+          <div className="absolute bottom-0 w-full bg-white h-1/5 opacity-80">
+            <div className="flex items-center justify-center h-full text-black">
               <p>{pages.sentences[key]}</p>
             </div>
           </div>
