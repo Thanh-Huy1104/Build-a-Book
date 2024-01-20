@@ -23,11 +23,11 @@ def stability_call(text_prompts):
         "samples": 1,
         "text_prompts": [
             {
-                "text": f"{text_prompts}, children book style, colourful,",
+                "text": f"{text_prompts}, children book style, colourful, cartoon, animated, pastel colors",
                 "weight": 1
             },
             {
-                "text": "blurry, bad",
+                "text": "blurry, bad, blurry image, watermark, messy",
                 "weight": -1
             }
         ],
