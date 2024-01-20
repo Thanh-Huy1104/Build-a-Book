@@ -45,7 +45,7 @@ const test =
     },
     "story": {
         "phrases": {
-            "1": "Once upon a time, a friendly robot embarked on a thrilling adventure",
+            "1": "Once upon a time, lol a friendly robot embarked on a thrilling adventure",
             "2": "With gears whirring and sparks flying, the robot zoomed through colorful meadows and soared over sparkling rivers, discovering new wonders at every turn"
         }
     }
