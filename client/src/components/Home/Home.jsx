@@ -4,7 +4,7 @@ import { MainScreen } from './MainScreen'
 
 export const Home = () => {
   return (
-    <div>
+    <div className="overflow-hidden">
       <MainScreen />
       <About />
     </div>
