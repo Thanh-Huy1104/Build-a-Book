@@ -13,6 +13,20 @@
   src: url(../../assets/Superdisco.ttf) format("opentype");
 }
 
+.main_screen {
+  position: relative; 
+  width: 100vw; 
+  height: 100vh;
+}
+
+.img_bg {
+  object-fit: cover; 
+  position: absolute; 
+  width: 100%; 
+  height: 100%; 
+  z-index: 10;
+}
+
 .curved-text {
   fill: white;
   text-shadow: 5px 5px #0000006e;
@@ -103,4 +117,153 @@
 }
 .MainScreen--input[type=text]{
   padding: 20px;
+}
+
+
+/** BACKGROUND IMAGES POSITIONING **/
+.doodles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+}
+
+.doodle {
+  position: absolute;
+}
+
+.globe {
+  width: 15%;
+  left: -5%;
+  top: 20%;
+}
+
+.books {
+  width: 20%;
+  right: -2%;
+  top: 0%;
+}
+
+.loupe {
+  width: 18%;
+  right: 15%;
+  bottom: -10%;
+}
+
+.bubble {
+  left: 20%;
+  top: 45%;
+}
+
+.penbox {
+  right: -10%;
+  bottom: -20%;
+}
+
+.pen {
+  right: 3%;
+  top: 40%;
+}
+
+.squiggle1 {
+  width: 12%;
+  left: 8%;
+  top: -8%;
+}
+
+.squiggle2 {
+  width: 15%;
+  right: -7%;
+  top: 40%;
+}
+
+.squiggle3{
+  left: 20%;
+  bottom: -25%;
+}
+
+.star {
+  right: 25%;
+  top: 48%;
+}
+
+.three_stars {
+  width: 10%;
+  left: 9%;
+  top: 80%;
+}
+
+.kids {
+  height: 300px;
+  width: 445px;
+  left: 35%;
+  top: 55%;
+}
+
+/** ANIMATION **/
+
+@keyframes float_dwn1 {
+	0% {
+		transform: translateY(0px);
+	}
+	50% {
+		transform: translateY(40px);
+	}
+	100% {
+		transform: translateY(0px);
+	}
+}
+
+#anim1 {
+    animation: float_dwn1 5s ease-in-out infinite;
+}
+
+@keyframes float_dwn2 {
+	0% {
+		transform: translateY(0px);
+	}
+	50% {
+		transform: translateY(50px);
+	}
+	100% {
+		transform: translateY(0px);
+	}
+}
+
+#anim2 {
+    animation: float_dwn2 4s ease-in-out infinite;
+}
+
+@keyframes float_up1 {
+	0% {
+		transform: translateY(0px);
+	}
+	50% {
+		transform: translateY(-30px);
+	}
+	100% {
+		transform: translateY(0px);
+	}
+}
+
+#anim3 {
+    animation: float_up1 5s ease-in-out infinite;
+}
+
+@keyframes float_up2 {
+	0% {
+		transform: translateY(0px);
+	}
+	50% {
+		transform: translateY(-40px);
+	}
+	100% {
+		transform: translateY(0px);
+	}
+}
+
+#anim4 {
+    animation: float_up2 4s ease-in-out infinite;
 }

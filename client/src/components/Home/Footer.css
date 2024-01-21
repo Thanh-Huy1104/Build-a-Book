@@ -1,0 +1,8 @@
+.Footer {
+    background-image: url("../../assets/empty_background.png");
+    /* background-color: #1550b0; */
+    text-align: center;
+    color: #fff;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}

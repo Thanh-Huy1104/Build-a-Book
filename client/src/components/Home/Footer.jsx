@@ -1,12 +1,13 @@
-import React from 'react'
-import './Footer.css'
+import React from "react";
+import "./Footer.css";
 
 const Footer = () => {
   return (
     <footer className="Footer">
-        &copy; Than-Huy Nguyen, Anne-Marie Nguyen, Hugo 
+      &copy; Thanh-Huy Nguyen, Anne-Marie Nguyen, Hugo Vaillant, Jason
+      Derulooooooooooooooo
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
