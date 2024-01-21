@@ -12,7 +12,7 @@ function App() {
       <Router>
         <Routes>
           <Route exact path="/" element={<Home input={input} setInput={setInput}/>}/>
-          <Route path="/book" element={<Book input={input}/>}/>
+          <Route path="/book/:input" element={<Book input={input}/>}/>
         </Routes>
       </Router>
     </div>

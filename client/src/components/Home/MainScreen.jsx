@@ -3,7 +3,7 @@ import {useState} from 'react';
 import bgImage from "../../assets/Main_Background.png";
 import kidImage from "../../assets/Main_Kids.png"
 import "./MainScreen.css"
-import {useNavigate} from "react-dom"
+import { useNavigate } from "react-router-dom"
 
 export const MainScreen = (props) => {
   const [isEditing, setIsEditing] = useState(false);
@@ -12,10 +12,19 @@ export const MainScreen = (props) => {
 
   const handleClick = () => {
     setIsEditing(true);
-    navigate("/book");
   }
   const handleInputBlur = () => {
     setIsEditing(false);
+  }
+
+  const handleKeyPress = (event) => {
+    
+    props.setInput(event.target.value);
+    
+
+    if (event.key === 'Enter') {
+      navigate("/book/${props.input}")
+    }    
   }
 
   return (
@@ -38,7 +47,7 @@ export const MainScreen = (props) => {
 
         <div className="Button--div">
         {isEditing ? (
-          <input className="MainScreen--input" type="text" onBlur={handleInputBlur} onChange={(event) => props.setInput(() => event.target.value)}/>
+          <input className="MainScreen--input" type="text" onBlur={handleInputBlur} onChange={handleKeyPress}/>
           ) : (
           <button className="MainScreen--button" onClick={handleClick}>Create your Story</button>
           )} 
