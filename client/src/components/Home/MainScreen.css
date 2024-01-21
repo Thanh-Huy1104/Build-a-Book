@@ -14,7 +14,6 @@
 }
 
 .main_screen {
-  overflow: hidden; 
   position: relative; 
   width: 100vw; 
   height: 100vh;
@@ -87,13 +86,13 @@
 .globe {
   width: 15%;
   left: -5%;
-  top: 55%;
+  top: 20%;
 }
 
 .books {
-  width: 25%;
-  right: -12%;
-  top: 10%;
+  width: 20%;
+  right: -2%;
+  top: 0%;
 }
 
 .loupe {
@@ -109,18 +108,18 @@
 
 .penbox {
   right: -10%;
-  bottom: -15%;
+  bottom: -20%;
 }
 
 .pen {
   right: 3%;
-  top: 50%;
+  top: 40%;
 }
 
 .squiggle1 {
   width: 12%;
-  left: -3%;
-  top: 15%;
+  left: 8%;
+  top: -8%;
 }
 
 .squiggle2 {
@@ -130,8 +129,8 @@
 }
 
 .squiggle3{
-  left: 2%;
-  bottom: -15%;
+  left: 20%;
+  bottom: -25%;
 }
 
 .star {
@@ -141,8 +140,8 @@
 
 .three_stars {
   width: 10%;
-  left: 15%;
-  top: 65%;
+  left: 9%;
+  top: 80%;
 }
 
 .kids {
@@ -159,7 +158,7 @@
 		transform: translateY(0px);
 	}
 	50% {
-		transform: translateY(20px);
+		transform: translateY(40px);
 	}
 	100% {
 		transform: translateY(0px);
@@ -167,7 +166,7 @@
 }
 
 #anim1 {
-    animation: float_dwn1 6s ease-in-out infinite;
+    animation: float_dwn1 5s ease-in-out infinite;
 }
 
 @keyframes float_dwn2 {
@@ -175,7 +174,7 @@
 		transform: translateY(0px);
 	}
 	50% {
-		transform: translateY(30px);
+		transform: translateY(50px);
 	}
 	100% {
 		transform: translateY(0px);
@@ -191,7 +190,7 @@
 		transform: translateY(0px);
 	}
 	50% {
-		transform: translateY(-20px);
+		transform: translateY(-30px);
 	}
 	100% {
 		transform: translateY(0px);
@@ -199,7 +198,7 @@
 }
 
 #anim3 {
-    animation: float_up1 6s ease-in-out infinite;
+    animation: float_up1 5s ease-in-out infinite;
 }
 
 @keyframes float_up2 {
@@ -207,7 +206,7 @@
 		transform: translateY(0px);
 	}
 	50% {
-		transform: translateY(-30px);
+		transform: translateY(-40px);
 	}
 	100% {
 		transform: translateY(0px);
