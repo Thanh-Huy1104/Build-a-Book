@@ -5,18 +5,18 @@ export async function getStory(userInput) {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ message: userInput }),
+        body: JSON.stringify({ "user_input": userInput }),
       });
   
       if (!response.ok) {
         throw new Error('API request failed');
       }
-  
+      console.log('working!');
       const data = await response.json();
-      return data.generated_phrases;
+      console.log(data);
+      return data;
     } catch (error) {
       console.error('Error:', error);
       throw error;
     }
   }
-  

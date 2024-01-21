@@ -3,13 +3,27 @@ import { useState } from "react";
 import bgImage from "../../assets/Main_Background.png";
 import kidImage from "../../assets/Main_Kids.png";
 import "./MainScreen.css";
+import { useNavigate } from "react-router-dom";
 
 export const MainScreen = () => {
+  const [input, setInput] = useState("");
   const [isClicked, setIsClicked] = useState(false);
+
   const handleClick = () => {
     setIsClicked(!isClicked);
   };
-  const buttonMouse = () => {};
+  const handleInputBlur = () => {
+    setIsEditing(false);
+  };
+  const handleInputChange = (event) => {
+    setInput(event.target.value);
+  };
+
+  const handleEnterPress = (event) => {
+    if (event.key === "Enter") {
+      navigate(`/book/${input}`);
+    }
+  };
 
   return (
     <div className="relative w-screen h-screen overflow-hidden">

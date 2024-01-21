@@ -6,11 +6,12 @@
 .text {
   font-family: LfL, Arial, sans-serif; /* Provide fallback fonts */
   line-height: 1.5;
-  font-size: 1.5em;
-  font-weight: 600;
+  font-size: 30px;
+  font-weight: 900;
   text-align: justify;
   text-justify: inter-word;
   margin: 0;
   padding: 0;
-  color: #000;
+  color: #ffffff;
+  text-shadow: 0 0 10px #000000;
 }
