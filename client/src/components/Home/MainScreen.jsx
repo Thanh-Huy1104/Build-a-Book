@@ -7,6 +7,7 @@ import "./MainScreen.css";
 import { useNavigate } from "react-router-dom";
 import { CoOlBaCkGrOuNd } from "./CoOlBaCkGrOuNd";
 import { useEffect } from "react";
+let timeoutId = null;
 
 export const MainScreen = () => {
   const [input, setInput] = useState("");
@@ -20,6 +21,8 @@ export const MainScreen = () => {
 
   const handleInputChange = (event) => {
     setInput(event.target.value);
+    setIsAppearing(false);
+    handleDelayedAppearance();
   };
 
   const handleClickStory = () => {
@@ -30,6 +33,15 @@ export const MainScreen = () => {
     if (event.key === "Enter") {
       navigate(`/book/${input}`);
     }
+  };
+
+  const handleDelayedAppearance = () => {
+    clearTimeout(timeoutId);
+    console.log("I have started");
+    timeoutId = setTimeout(() => {
+      console.log("I have finished");
+      setIsAppearing(true);
+    }, 2000);
   };
 
   return (
