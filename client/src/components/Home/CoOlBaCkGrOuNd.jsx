@@ -23,7 +23,6 @@ export const CoOlBaCkGrOuNd = () => {
       <img src={Pen} alt="" className="doodle pen" id="anim2" />
       <img src={Squiggle1} alt="" className="doodle squiggle1" id="anim2" />
       <img src={Squiggle2} alt="" className="doodle squiggle2" id="anim3" />
-      <img src={Squiggle3} alt="" className="doodle squiggle3" id="anim4" />
       <img src={Star} alt="" className="doodle star" id="anim4" />
       <img src={ThreeStar} alt="" className="doodle three_stars" id="anim3" />
       <img src={Kids} alt="" className="doodle kids" />

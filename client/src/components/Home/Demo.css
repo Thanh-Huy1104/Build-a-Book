@@ -1,0 +1,27 @@
+.img--background {
+  background-image: url("../../assets/empty_background.png");
+}
+@font-face {
+    font-family: StarBorn;
+    src: url(../../assets/Starborn.ttf) format("truetype");
+}
+.btn-animate {
+  transition: transform 0.3s ease-in-out;
+}
+
+.btn-animate:hover::before {
+  transform: scale(1.1);
+
+  width: calc(100% + 4px);
+  height: calc(100% + 5px);
+}
+
+.btn-animate::before{
+    width: calc(100% - 5px);
+    height: calc(100% - 5px);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    border: 2px solid var(--gb-52);
+    border-radius: 8px;
+}

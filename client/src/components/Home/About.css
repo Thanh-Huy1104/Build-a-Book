@@ -7,8 +7,11 @@
 @font-face {
     font-family: LfL;
     src: url("../../assets/Letters for Learners.ttf") format("truetype");
-  }
-
+}
+@font-face {
+    font-family: LfL;
+    src: url("../../assets/Letters for Learners.ttf") format("truetype");
+}
 .About--title{
     font-family: Paytone One;
     font-size: 85px;
@@ -23,6 +26,15 @@
     padding: 50px 250px;
     font-size: 27px;
     line-height: 32px;
+}
+
+.About--p1 span{
+    font-family: LFL;
+    color: white;
+    font-size: 27px;
+    line-height: 32px;
+    font-weight: 900;
+    text-shadow: 0 5px #00000025;
 }
 
 .About--p2{

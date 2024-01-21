@@ -3,7 +3,7 @@ import { AboutBG } from "./AboutBG";
 
 const About = () => {
   return (
-    <div className="About--div pt-[200px]">
+    <div className="About--div pt-[50px]">
       <h1 className="About--title">Our Story</h1>
       <p className="About--p1">
         Our inspiration for Build-a-Book begins with the desire to converge

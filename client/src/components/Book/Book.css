@@ -2,6 +2,18 @@
   font-family: LfL;
   src: url("../../assets/Letters for Learners.ttf") format("truetype");
 }
+@font-face {
+  font-family: Willkids;
+  src: url(../../assets/Willkids.otf) format("opentype");
+}
+@font-face {
+  font-family: MilkMango;
+  src: url("../../assets/Milk Mango.ttf") format("truetype");
+}
+@font-face {
+  font-family: StarBorn;
+  src: url(../../assets/Starborn.ttf) format("truetype");
+}
 
 .text {
   font-family: LfL, Arial, sans-serif; /* Provide fallback fonts */
@@ -13,20 +25,20 @@
   margin: 0;
   padding: 0;
   color: #000000;
-  text-shadow: 0 0 10px #fff1f1;
+  text-shadow: 0 5px #00000025;
 }
 
 .title {
-  font-family: LfL, Arial, sans-serif; /* Provide fallback fonts */
+  font-family: StarBorn, Arial, sans-serif; /* Provide fallback fonts */
   line-height: 1.5;
-  font-size: 90px;
-  font-weight: 900;
+  font-size: 78px;
+  font-weight: 400;
   text-align: center;
   text-justify: inter-word;
   margin: 0;
   padding: 0;
   color: #000000;
-  text-shadow: 0 0 10px #fff1f1;
+  text-shadow: 0 10px #00000025;
 }
 
 .carousel-container {
