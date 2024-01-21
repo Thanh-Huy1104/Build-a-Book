@@ -12,9 +12,6 @@ import testJson from "../../assets/output.json";
 export const Book = () => {
   const [story, setStory] = useState(null);
   const [didRun, setDidRun] = useState(false);
-  const [prompt, setPrompt] = useState(
-    "Write about a story about a dog and a cat going on an adventure. They find a treasure, the treasure of friendship, only call them by cat or dog not any pronouns"
-  );
 
   const [loopNumber, setLoopNumber] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
@@ -38,6 +35,9 @@ export const Book = () => {
     "#ffffba",
     "#baffc9",
     "#bae1ff",
+    "#ffb3ba",
+    "#ffdfba",
+    "#ffffba",
     // Add more pastel colors as needed
   ];
 
