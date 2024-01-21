@@ -1,7 +1,8 @@
 .About--div{
-    background-image: url("../../assets/About_Background.png");
+    background-image: url("../../assets/empty_background.png");
     background-position: center;
     background-size: 100%;
+    padding-bottom: 50px;
 }
 @font-face {
     font-family: LfL;
@@ -29,7 +30,84 @@
     color:white;
     text-align: justify;
     padding: 0px 250px;
-    padding-bottom: 50px;
     font-size: 27px;
     line-height: 32px;
+}
+
+.About--div {
+    position: relative;
+}
+
+.about_doodles{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+}
+
+.about_doodles img {
+    width: 8%;
+}
+
+.about_globe {
+    width: 15%;
+    left: 0%;
+    top: 55%;
+}
+
+.about_books {
+    width: 25%;
+    right: 7%;
+    top: 15%;
+}
+
+.about_loupe {
+    width: 18%;
+    right: 15%;
+    bottom: -10%;
+}
+
+.about_bubble {
+    left: 7%;
+    bottom: 0%;
+}
+
+.about_penbox {
+    right: 1%;
+    bottom: -3%;
+}
+
+.about_pen {
+    right: 3%;
+    top: 60%;
+}
+
+.about_squiggle1 {
+    width: 12%;
+    left: 0%;
+    top: 15%;
+}
+
+.about_squiggle2 {
+    width: 15%;
+    right: 0%;
+    top: 40%;
+}
+
+.about_squiggle3{
+    left: 2%;
+    bottom: -10%;
+}
+
+.about_star {
+    right: 20%;
+    top: 30%;
+}
+
+.about_three_stars {
+    width: 10%;
+    left: 15%;
+    top: 25%;
 }
