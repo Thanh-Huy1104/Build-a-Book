@@ -7,6 +7,7 @@ import { useParams } from "react-router-dom";
 import Lottie from "react-lottie";
 import Animation from "../../assets/animation.json";
 import Loader from "../../assets/Loader.json";
+import testJson from "../../assets/output.json";
 
 export const Book = () => {
   const [story, setStory] = useState(null);
@@ -17,7 +18,6 @@ export const Book = () => {
 
   const [loopNumber, setLoopNumber] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
-  const [objKeys, setObjKeys] = useState([]);
   const toRotate = [
     "Bringing stories to life...",
     "Crafting magic...",
@@ -87,24 +87,33 @@ export const Book = () => {
 
   const { input } = useParams();
 
-  useEffect(() => {
-    const fetchStory = async () => {
-      if (didRun) return;
-      try {
-        const test = await getStory(input);
-        console.log("Received story:", test);
-        setStory(test);
-        setObjKeys(test.story.phrases);
-        console.log("test before setting:", test.story.phrases);
-        console.log("test after setting:", test);
-      } catch (error) {
-        console.error("Error:", error);
-      }
-      setDidRun(true);
-    };
-    fetchStory();
-  }, []); // Include prompt in the dependency array to trigger a fetch when it changes
+  //useEffect(() => {
+    // const fetchStory = async () => {
+    //   if (didRun) return;
+    //   try {
+    //     const test = await getStory(input);
+    //     console.log("Received story:", test);
+        
+    //     setStory(test);
+    //     setObjKeys(test.story.phrases);
+    //     console.log("test before setting:", test.story.phrases);
+    //     console.log("test after setting:", test);
+    //   } catch (error) {
+    //     console.error("Error:", error);
+    //   }
+    //   setDidRun(true);
+    // };
+    // fetchStory();
+ // }, []); 
 
+  useEffect(() => {
+    setInterval(() => {
+      setStory(testJson);
+    }
+    , 5000);
+  } 
+  , [story]);
+  
   return (
     <div className="">
       {story !== null ? (
