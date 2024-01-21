@@ -1,5 +1,6 @@
 import React, { useEffect, useState, Animated } from "react";
-import HTMLFlipBook from "react-pageflip";
+import Carousel from "react-material-ui-carousel";
+import { Paper } from "@mui/material";
 import "./Book.css";
 import { getStory } from "../../api/image.service";
 import { useParams } from "react-router-dom";
@@ -13,7 +14,7 @@ export const Book = () => {
   const [prompt, setPrompt] = useState(
     "Write about a story about a dog and a cat going on an adventure. They find a treasure, the treasure of friendship, only call them by cat or dog not any pronouns"
   );
-  
+
   const [loopNumber, setLoopNumber] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const toRotate = [
@@ -75,7 +76,6 @@ export const Book = () => {
     const fetchStory = async () => {
       if (didRun) return;
       try {
-
         const story = await getStory(prompt);
         console.log("Received story:", story);
         setTest(story);
@@ -86,54 +86,49 @@ export const Book = () => {
       setDidRun(true);
     };
     fetchStory();
-  }, [input]); // Include prompt in the dependency array to trigger a fetch when it changes
+  }, []); // Include prompt in the dependency array to trigger a fetch when it changes
 
   return (
     <div className="flex">
       {test !== null ? (
-        <HTMLFlipBook width={620} height={620}
-          size="stretch"
-          minWidth={315}
-          maxWidth={1000}
-          minHeight={400}
-          maxHeight={1533}
-          maxShadowOpacity={0.5}
-          showCover={true}
-          mobileScrollSupport={true}
-          onFlip={(e) => console.log("flip", e)}
-          onChangeOrientation={(e) => console.log("orientation", e)}
-          onChangeState={(e) => console.log("state", e)}
-          className="bg-white"
-          
-        >
-          {Object.keys(test.story.phrases)?.map((key, id) => (
-            <div key={id}>
-              <div className="absolute bottom-6  left-1/2 transform -translate-x-1/2 w-[80%] h-[20%] rounded-xl">
-                <div className="flex items-center justify-center h-full p-6 text-black text-wrap">
-                  <p className="text ">{test.story.phrases[key]}.</p>
-                </div>
-              </div>
-              <img
-                src={`data:image/png;base64,${test.images[key][0].base64}`}
-                alt={"image"}
-                className="w-full h-full"
-              />
-            </div>
-          ))}
-        </HTMLFlipBook>
+        <div>
+          <Carousel>
+            {test.story.phrases.map((phrase, id) => {
+              return (
+                <Paper key={id}>
+                  <div className="big-container">
+                    <div className="carousel-container">
+                      <img
+                        src={`data:image/png;base64,${test.images[phrase][0].base64}`}
+                        alt={"image"}
+                        className="w-full h-full"
+                      />
+                    </div>
+                    <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 w-[80%] h-[20%] rounded-xl">
+                      <div className="flex items-center justify-center h-full p-6 text-black text-wrap">
+                        <p className="text ">{test.story.phrases[phrase]}.</p>
+                      </div>
+                    </div>
+                  </div>
+                </Paper>
+              );
+            })}
+          </Carousel>
+        </div>
       ) : (
         <div
           style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
-        > 
+        >
           <div className="absolute bottom-[-100px] transform -translate-x-1/2 -translate-y-1/2 left-1/2">
-          
-          <Lottie options={defaultOptions1} height={600} width={600} />
+            <Lottie options={defaultOptions1} height={600} width={600} />
           </div>
           <div className="absolute bottom-[60px] transform -translate-x-1/2 -translate-y-1/2 left-1/2">
             <Lottie options={defaultOptions2} height={200} width={1000} />
           </div>
           <div className="absolute transform -translate-x-1/2 -translate-y-1/2 bottom-[270px] left-1/2">
-            <h1 className="text-3xl font-bold text-black font-[LFL] tracking-widest">{text}</h1>
+            <h1 className="text-3xl font-bold text-black font-[LFL] tracking-widest">
+              {text}
+            </h1>
           </div>
         </div>
       )}

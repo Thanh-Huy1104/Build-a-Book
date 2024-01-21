@@ -27,12 +27,8 @@ export const MainScreen = () => {
   };
 
   return (
-    <div className="relative w-screen h-screen overflow-hidden">
-      <img
-        src={emptyBg}
-        alt="Background Image"
-        className="object-cover w-full h-full"
-      />
+    <div className="main_screen">
+      <img src={emptyBg} alt="Background Image" className="img_bg" />
       <CoOlBaCkGrOuNd />
       <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-white">
         <svg viewBox="-70 160 700 360">
