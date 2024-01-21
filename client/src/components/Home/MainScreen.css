@@ -18,7 +18,6 @@
   text-shadow: 5px 5px #0000006e;
 }
 
-
 .MainScreen--title2{
   font-family: Peachcake;
   font-size: 2.7vw;
@@ -28,7 +27,9 @@
 }
 
 .MainScreen--button{
-  background-color: #ffe941e2;
+  position: absolute;
+  top: 350px;
+  background-color: #fac720;
   color: #0272fc;
   font-family: Superdisco;
   font-size: 40px;
@@ -36,15 +37,11 @@
   border-radius: 25px;
   padding: 15px 60px;
   box-shadow: 5px 5px #0000006e;
-  transition: opacity 3s ease-in-out, transform 0.3s ease-in-out;
 }
-
-.MainScreen--button:hover{
-  transform: translateY(-10px) scale(1.03);
-}
-
 
 .MainScreen--input{
+  position: absolute;
+  top: 350px;
   color:black;
   height: 100px;
   width: 500px;
@@ -52,13 +49,6 @@
   font-size: 40px;
   border-radius: 25px;
 }
-
-
 .MainScreen--input[type=text]{
   padding: 20px;
-}
-
-.Button--div{
-  position: absolute;
-  top: 350px;
 }
