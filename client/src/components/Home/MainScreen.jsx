@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 export const MainScreen = () => {
   const [input, setInput] = useState("");
   const [isClicked, setIsClicked] = useState(false);
+  const navigate = useNavigate();
 
   const handleClick = () => {
     setIsClicked(!isClicked);
@@ -50,6 +51,8 @@ export const MainScreen = () => {
 
         <input
           onBlur={handleClick}
+          onChange={handleInputChange}
+          onKeyDown={handleEnterPress}
           onMouseOver={(e) => {
             e.target.style.transform = "scale(1.05) translateY(-5px)";
           }}
