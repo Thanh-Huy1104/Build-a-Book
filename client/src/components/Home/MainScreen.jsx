@@ -88,7 +88,7 @@ export const MainScreen = () => {
           <span>t</span>
         </h1>
         <input
-          onBlur={handleClick}
+          // onBlur={handleClick}
           onChange={handleInputChange}
           onKeyDown={handleEnterPress}
           onMouseOver={(e) => {
