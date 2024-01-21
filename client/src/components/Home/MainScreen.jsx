@@ -1,21 +1,21 @@
 import React from "react";
 import { useState } from "react";
 import bgImage from "../../assets/Main_Background.png";
+import emptyBg from "../../assets/empty_background.png";
 import kidImage from "../../assets/Main_Kids.png";
 import "./MainScreen.css";
 import { useNavigate } from "react-router-dom";
+import { CoOlBaCkGrOuNd } from "./CoOlBaCkGrOuNd";
 
 export const MainScreen = () => {
   const [input, setInput] = useState("");
-  const [isClicked, setIsClicked] = useState(false);
   const navigate = useNavigate();
+  const [isClicked, setIsClicked] = useState(false);
 
   const handleClick = () => {
     setIsClicked(!isClicked);
   };
-  const handleInputBlur = () => {
-    setIsEditing(false);
-  };
+
   const handleInputChange = (event) => {
     setInput(event.target.value);
   };
@@ -29,10 +29,11 @@ export const MainScreen = () => {
   return (
     <div className="relative w-screen h-screen overflow-hidden">
       <img
-        src={bgImage}
+        src={emptyBg}
         alt="Background Image"
         className="object-cover w-full h-full"
       />
+      <CoOlBaCkGrOuNd />
       <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-white">
         <svg viewBox="-70 160 700 360">
           <path id="curve" fill="transparent" d="M 110 300 q 150 -200 340 0" />
