@@ -1,16 +1,18 @@
 import './App.css'
+import { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Home } from './components/Home/Home';
 import { Book } from './components/Book/Book';
 
 function App() {
+  const [input, setInput] = useState("");
 
   return (
     <div>
       <Router>
         <Routes>
-          <Route exact path="/" element={<Home />}/>
-          <Route path="/book" element={<Book />}/>
+          <Route exact path="/" element={<Home input={input} setInput={setInput}/>}/>
+          <Route path="/book" element={<Book input={input}/>}/>
         </Routes>
       </Router>
     </div>
