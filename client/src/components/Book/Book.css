@@ -6,14 +6,27 @@
 .text {
   font-family: LfL, Arial, sans-serif; /* Provide fallback fonts */
   line-height: 1.5;
-  font-size: 30px;
+  font-size: 64px;
   font-weight: 900;
-  text-align: justify;
+  text-align: left;
   text-justify: inter-word;
   margin: 0;
   padding: 0;
-  color: #ffffff;
-  text-shadow: 0 0 10px #000000;
+  color: #000000;
+  text-shadow: 0 0 10px #fff1f1;
+}
+
+.title {
+  font-family: LfL, Arial, sans-serif; /* Provide fallback fonts */
+  line-height: 1.5;
+  font-size: 90px;
+  font-weight: 900;
+  text-align: center;
+  text-justify: inter-word;
+  margin: 0;
+  padding: 0;
+  color: #000000;
+  text-shadow: 0 0 10px #fff1f1;
 }
 
 .carousel-container {
@@ -21,10 +34,10 @@
   width: 100%;
   height: 100%;
   background-size: cover;
-  position: relative; /* Ensure relative positioning for absolute child */
+  position: relative; 
 }
 
 .big-container {
-  height:90vh;
-  width: 90vh;
+  height:100vh;
+  width:100vh;
 }

@@ -27,33 +27,19 @@ export const Book = () => {
   const period = 1000;
   const [delta, setDelta] = useState(50 - Math.random());
 
-  const pages = {
-    images: {
-      1: "https://image.tmdb.org/t/p/original/53BC9F2tpZnsGno2cLhzvGprDYS.jpg",
-      2: "https://image.tmdb.org/t/p/original/e9Qb2kmBnMXHCmNMI8NX1JbWhh1.jpg",
-      3: "https://image.tmdb.org/t/p/original/2WjOOOGUu6dp4r8VqR5n48DY7JG.jpg",
-      4: "https://image.tmdb.org/t/p/original/duIsyybgrC4S8kcCIVaxNOttV15.jpg",
-      5: "https://image.tmdb.org/t/p/original/3RS8runn9AfrYDzRVPWuGPmvXQf.jpg",
-      6: "https://image.tmdb.org/t/p/original/8wLRn2VvBlCu6cqYS4ypipnwosr.jpg",
-      7: "https://image.tmdb.org/t/p/original/zDqVVkmfvj47FBUE5lwE4rWnITu.jpg",
-      8: "https://image.tmdb.org/t/p/original/682Ui5DwZDdbIPzKAEOR7cJlMXa.jpg",
-      9: "https://image.tmdb.org/t/p/original/6jdlppcnGi3XuJamfs4Vl7HyxB.jpg",
-      10: "https://image.tmdb.org/t/p/original/uIq83ogs7QBEWi1aqmUrdDIH61m.jpg",
-    },
-
-    sentences: {
-      1: "Fuck",
-      2: "Shit",
-      3: "Bitch",
-      4: "Young",
-      5: "Scheck",
-      6: "Wes",
-      7: "and",
-      8: "I'm",
-      9: "getting",
-      10: "rich",
-    },
-  };
+  const pastelColors = [
+    "#ffb3ba",
+    "#ffdfba",
+    "#ffffba",
+    "#baffc9",
+    "#bae1ff",
+    "#ffb3ba",
+    "#ffdfba",
+    "#ffffba",
+    "#baffc9",
+    "#bae1ff",
+    // Add more pastel colors as needed
+  ];
 
   useEffect(() => {
     let ticker = setInterval(() => {
@@ -123,11 +109,40 @@ export const Book = () => {
     <div className="">
       {story !== null ? (
         <div>
-          <Carousel>
+          <Carousel
+            autoPlay={false}
+            animation="slide"
+            cycleNavigation={false}
+            navButtonsAlwaysVisible={true}
+            className="items-center justify-center w-screen h-screen"
+            navButtonsProps={{
+              style: {
+                backgroundColor: "#f5f5dc",
+                color: "black",
+                boxShadow: "inherit",
+                borderRadius: 50,
+                marginRight: 10,
+                marginLeft: 10,
+                height: 100,
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              },
+            }}
+            indicators={false}
+          >
             {Object.keys(story.story.phrases).map((phrase, id) => {
-              console.log("hoe ");
+              console.log("hoe");
               return (
-                <Paper key={id}>
+                <Paper
+                  key={id}
+                  style={{
+                    backgroundColor: pastelColors[phrase],
+                    boxShadow: "none",
+                    height: "100vh",
+                    width: "100vw",
+                  }}
+                >
                   <div className="big-container">
                     <div className="carousel-container">
                       <img
@@ -136,9 +151,11 @@ export const Book = () => {
                         className="w-full h-full"
                       />
                     </div>
-                    <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 w-[80%] h-[20%] rounded-xl">
-                      <div className="flex items-center justify-center h-full p-6 text-black text-wrap">
-                        <p className="text ">{story.story.phrases[phrase]}.</p>
+                    <div className="absolute bottom-10 right-12 w-[40%] h-[90%] rounded-xl bg-white">
+                      <div className="flex items-center justify-center h-full px-[100px] tex5t-black">
+                        <p className={id === 0 ? "title" : "text"}>
+                          {story.story.phrases[phrase]}.
+                        </p>
                       </div>
                     </div>
                   </div>
