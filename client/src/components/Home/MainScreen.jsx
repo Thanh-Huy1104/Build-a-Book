@@ -6,18 +6,16 @@ import "./MainScreen.css";
 import { useNavigate } from "react-router-dom";
 
 export const MainScreen = () => {
-  const [isEditing, setIsEditing] = useState(false);
   const [input, setInput] = useState("");
-
+  const [isClicked, setIsClicked] = useState(false);
   const navigate = useNavigate();
 
   const handleClick = () => {
-    setIsEditing(true);
+    setIsClicked(!isClicked);
   };
   const handleInputBlur = () => {
     setIsEditing(false);
   };
-
   const handleInputChange = (event) => {
     setInput(event.target.value);
   };
@@ -51,21 +49,43 @@ export const MainScreen = () => {
         </svg>
         <h1 className="MainScreen--title2">You Dream It, We Write It</h1>
 
-        <div className="Button--div">
-          {isEditing ? (
-            <input
-              className="MainScreen--input"
-              type="text"
-              onBlur={handleInputBlur}
-              onChange={handleInputChange}
-              onKeyDown={handleEnterPress}
-            />
-          ) : (
-            <button className="MainScreen--button" onClick={handleClick}>
-              Create your Story
-            </button>
-          )}
-        </div>
+        <input
+          onBlur={handleClick}
+          onChange={handleInputChange}
+          onKeyDown={handleEnterPress}
+          onMouseOver={(e) => {
+            e.target.style.transform = "scale(1.05) translateY(-5px)";
+          }}
+          onMouseOut={(e) => {
+            isClicked ? (e.target.style.transform = "scale(1)") : 0;
+          }}
+          className="MainScreen--input"
+          type="text"
+          style={{
+            transform: `scale(${isClicked ? 1 : 0})`,
+            opacity: isClicked ? 1 : 0,
+            transition: "transform 0.3s ease-out, opacity 0.3s ease-out",
+            pointerEvents: isClicked ? "auto" : "none",
+          }}
+        />
+        <button
+          onClick={handleClick}
+          onMouseOver={(e) => {
+            e.target.style.transform = "scale(1.05) translateY(-5px)";
+          }}
+          onMouseOut={(e) => {
+            isClicked ? 0 : (e.target.style.transform = "scale(1)");
+          }}
+          className="MainScreen--button"
+          style={{
+            transform: `scale(${isClicked ? 0 : 1})`,
+            opacity: isClicked ? 0 : 1,
+            transition: "transform 0.3s ease-out, opacity 0.3s ease-out",
+            pointerEvents: isClicked ? "none" : "auto",
+          }}
+        >
+          Create your Story
+        </button>
       </div>
       <div className="absolute mb-4 text-white transform -translate-x-1/2 bottom-2 left-1/2">
         <img
