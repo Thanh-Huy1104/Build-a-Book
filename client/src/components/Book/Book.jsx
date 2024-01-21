@@ -2,14 +2,16 @@ import React, { useEffect, useState } from "react";
 import HTMLFlipBook from "react-pageflip";
 import "./Book.css";
 import { getStory } from "../../api/image.service";
-import {useParams} from "react-router-dom"
+import { useParams } from "react-router-dom";
 
-export const Book = (props) => {
+export const Book = () => {
   const [test, setTest] = useState(null);
   const [didRun, setDidRun] = useState(false);
-  const [prompt, setPrompt] = useState("Write about a story about a dog and a cat going on an adventure. They find a treasure, the treasure of friendship, only call them by cat or dog not any pronouns");
+  const [prompt, setPrompt] = useState(
+    "Write about a story about a dog and a cat going on an adventure. They find a treasure, the treasure of friendship, only call them by cat or dog not any pronouns"
+  );
 
-  const input = useParams();
+  const { input } = useParams();
   console.log(input);
 
   // useEffect(() => {
@@ -27,9 +29,6 @@ export const Book = (props) => {
   //   };
   //   fetchStory();
   // }, [prompt]); // Include prompt in the dependency array to trigger a fetch when it changes
-
-  console.log(props.input);
-
 
   return (
     <div className="flex items-center justify-center min-h-screen">

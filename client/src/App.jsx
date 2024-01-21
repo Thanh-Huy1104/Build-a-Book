@@ -5,14 +5,14 @@ import { Home } from './components/Home/Home';
 import { Book } from './components/Book/Book';
 
 function App() {
-  const [input, setInput] = useState("");
+  
 
   return (
     <div>
       <Router>
         <Routes>
-          <Route exact path="/" element={<Home input={input} setInput={setInput}/>}/>
-          <Route path="/book/:input" element={<Book input={input}/>}/>
+          <Route exact path="/" element={<Home />}/>
+          <Route path="/book/:input" element={<Book />}/>
         </Routes>
       </Router>
     </div>
