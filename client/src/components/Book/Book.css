@@ -23,3 +23,8 @@
   background-size: cover;
   position: relative; /* Ensure relative positioning for absolute child */
 }
+
+.big-container {
+  height: 620px;
+  width: 620px;
+}
