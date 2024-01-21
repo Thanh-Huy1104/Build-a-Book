@@ -28,7 +28,7 @@ export const Book = () => {
   return (
     <div className="flex items-center justify-center min-h-screen">
       {test !== null ? (
-        <HTMLFlipBook width={620} height={620}>
+        <HTMLFlipBook width={745} height={729}>
           {Object.keys(test.story.phrases).map((key, id) => (
             <div className="demoPage" key={id}>
               <div className="absolute bottom-6  left-1/2 transform -translate-x-1/2 w-[80%] h-[20%] rounded-xl">
