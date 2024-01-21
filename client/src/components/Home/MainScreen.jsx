@@ -6,11 +6,13 @@ import kidImage from "../../assets/Main_Kids.png";
 import "./MainScreen.css";
 import { useNavigate } from "react-router-dom";
 import { CoOlBaCkGrOuNd } from "./CoOlBaCkGrOuNd";
+import { useEffect } from "react";
 
 export const MainScreen = () => {
   const [input, setInput] = useState("");
   const navigate = useNavigate();
   const [isClicked, setIsClicked] = useState(false);
+  const [isAppearing, setIsAppearing] = useState(false);
 
   const handleClick = () => {
     setIsClicked(!isClicked);
@@ -18,6 +20,10 @@ export const MainScreen = () => {
 
   const handleInputChange = (event) => {
     setInput(event.target.value);
+  };
+
+  const handleClickStory = () => {
+    navigate(`/book/${input}`);
   };
 
   const handleEnterPress = (event) => {
@@ -40,25 +46,62 @@ export const MainScreen = () => {
           <text width="1500" className="curved-text">
             <textPath
               alignmentBaseline="top"
-              startOffset="0%"
               xlinkHref="#curve"
-              style={{ fontSize: "50px", fontFamily: "Willkids" }}
+              style={{
+                fontSize: "50px",
+                fontFamily: "Willkids",
+                startOffset: "-100%",
+              }}
             >
               Build-a-Book
+              <animate
+                attributeName="startOffset"
+                from="-100%"
+                to="0%"
+                begin="0s"
+                dur="0.65s"
+              />
             </textPath>
           </text>
         </svg>
-        <h1 className="MainScreen--title2">You Dream It, We Write It</h1>
-
+        <h1 className="MainScreen--title2">
+          <span>Y</span>
+          <span>o</span>
+          <span>u</span>
+          <span> </span>
+          <span>D</span>
+          <span>r</span>
+          <span>e</span>
+          <span>a</span>
+          <span>m</span>
+          <span> </span>
+          <span>I</span>
+          <span>t</span>
+          <span>,</span>
+          <span> </span>
+          <span>W</span>
+          <span>e</span>
+          <span> </span>
+          <span>W</span>
+          <span>r</span>
+          <span>i</span>
+          <span>t</span>
+          <span>e</span>
+          <span> </span>
+          <span>I</span>
+          <span>t</span>
+        </h1>
         <input
           onBlur={handleClick}
           onChange={handleInputChange}
           onKeyDown={handleEnterPress}
           onMouseOver={(e) => {
+            setIsAppearing(true);
             e.target.style.transform = "scale(1.05) translateY(-5px)";
           }}
           onMouseOut={(e) => {
-            isClicked ? (e.target.style.transform = "scale(1)") : 0;
+            setIsAppearing(false);
+            //e.target.style.transform = "scale(1) translateY(0px)";
           }}
           className="MainScreen--input"
           type="text"
@@ -70,11 +113,34 @@ export const MainScreen = () => {
           }}
         />
         <button
+          onMouseOver={(e) => {
+            setIsAppearing(true);
+            e.target.style.opacity = "1";
+            e.target.style.transform = "scale(1)";
+          }}
+          onMouseOut={(e) => {
+            setIsAppearing(false);
+            e.target.style.opacity = "0";
+            e.target.style.transform = "scale(0)";
+          }}
+          onClick={handleClickStory}
+          style={{
+            opacity: isAppearing ? 1 : 0,
+            transform: `scale(${isAppearing ? 1 : 0})`,
+            transition: "transform 0.3s ease-out, opacity 0.3s ease-out",
+          }}
+          className="MainScreen--gtbutton"
+        >
+          &gt;
+        </button>
+
+        <button
           onClick={handleClick}
           onMouseOver={(e) => {
             e.target.style.transform = "scale(1.05) translateY(-5px)";
           }}
           onMouseOut={(e) => {
+            // e.target.style.transform = "scale(1)";
             isClicked ? 0 : (e.target.style.transform = "scale(1)");
           }}
           className="MainScreen--button"

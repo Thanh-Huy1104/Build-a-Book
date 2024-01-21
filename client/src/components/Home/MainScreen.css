@@ -26,6 +26,45 @@
   text-shadow: 2px 2px #0000006e;
 }
 
+.MainScreen--title2 span{
+  opacity: 0;
+  animation: fadeInSequential 1s forwards;
+}
+.MainScreen--title2 span:nth-child(25) {animation-delay: 0.02s;}
+.MainScreen--title2 span:nth-child(24) {animation-delay: 0.06s;}
+.MainScreen--title2 span:nth-child(23) {animation-delay: 0.1s;}
+.MainScreen--title2 span:nth-child(22) {animation-delay: 0.14s;}
+.MainScreen--title2 span:nth-child(21) {animation-delay: 0.18s;}
+.MainScreen--title2 span:nth-child(20) {animation-delay: 0.2s;}
+.MainScreen--title2 span:nth-child(19) {animation-delay: 0.23s;}
+.MainScreen--title2 span:nth-child(18) {animation-delay: 0.26s;}
+.MainScreen--title2 span:nth-child(17) {animation-delay: 0.29s;}
+.MainScreen--title2 span:nth-child(16) {animation-delay: 0.31s;}
+.MainScreen--title2 span:nth-child(15) {animation-delay: 0.33s;}
+.MainScreen--title2 span:nth-child(14) {animation-delay: 0.34s;}
+.MainScreen--title2 span:nth-child(13) {animation-delay: 0.35s;}
+.MainScreen--title2 span:nth-child(12) {animation-delay: 0.36s;}
+.MainScreen--title2 span:nth-child(11) {animation-delay: 0.37s;}
+.MainScreen--title2 span:nth-child(10) {animation-delay: 0.38s;}
+.MainScreen--title2 span:nth-child(9) {animation-delay: 0.40s;}
+.MainScreen--title2 span:nth-child(8) {animation-delay: 0.42s;}
+.MainScreen--title2 span:nth-child(7) {animation-delay: 0.43s;}
+.MainScreen--title2 span:nth-child(6) {animation-delay: 0.45s;}
+.MainScreen--title2 span:nth-child(5) {animation-delay: 0.48s;}
+.MainScreen--title2 span:nth-child(4) {animation-delay: 0.51s;}
+.MainScreen--title2 span:nth-child(3) {animation-delay: 0.54s;}
+.MainScreen--title2 span:nth-child(2) {animation-delay: 0.57s;}
+.MainScreen--title2 span:nth-child(1) {animation-delay: 0.6s;}
+
+@keyframes fadeInSequential{
+  from{
+    opacity: 1;
+  }
+  to{
+    opacity: 1;
+  }
+}
+
 .MainScreen--button{
   position: absolute;
   top: 350px;
@@ -38,6 +77,18 @@
   border-radius: 25px;
   padding: 15px 60px;
   box-shadow: 5px 5px #0000006e;
+}
+.MainScreen--gtbutton{
+  background-color: white;
+  position:absolute;
+  top:350px;
+  left:930px;
+  color: rgba(0, 0, 0, 0.800);
+  font-family: Superdisco;
+  font-size: 60px;
+  text-align: center;
+  padding: 0px 10px;
+  border-radius: 25px
 }
 
 .MainScreen--input{
