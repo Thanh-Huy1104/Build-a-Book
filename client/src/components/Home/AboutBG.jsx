@@ -22,8 +22,6 @@ export const AboutBG = () => {
       <img src={Squiggle1} alt="" className="doodle about_squiggle1" />
       <img src={Squiggle2} alt="" className="doodle about_squiggle2" />
       <img src={Squiggle3} alt="" className="doodle about_squiggle3" />
-      <img src={Star} alt="" className="doodle about_star" />
-      <img src={ThreeStar} alt="" className="doodle about_three_stars" />
     </div>
   );
 };
