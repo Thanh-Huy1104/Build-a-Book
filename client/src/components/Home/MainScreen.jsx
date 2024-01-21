@@ -7,14 +7,11 @@ import { useNavigate } from "react-router-dom";
 
 export const MainScreen = () => {
   const [input, setInput] = useState("");
-  const [isClicked, setIsClicked] = useState(false);
   const navigate = useNavigate();
+  const [isClicked, setIsClicked] = useState(false);
 
   const handleClick = () => {
     setIsClicked(!isClicked);
-  };
-  const handleInputBlur = () => {
-    setIsEditing(false);
   };
   const handleInputChange = (event) => {
     setInput(event.target.value);
