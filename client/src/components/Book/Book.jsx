@@ -9,8 +9,7 @@ import Animation from "../../assets/animation.json";
 import Loader from "../../assets/Loader.json";
 import testJSON1 from "../../assets/output.json";
 import testJSON2 from "../../assets/output1.json";
-import testJSON3 from "../../assets/output2.json";
-
+import testJSON3 from "../../assets/output3.json";
 
 export const Book = () => {
   const [story, setStory] = useState(null);
@@ -90,39 +89,36 @@ export const Book = () => {
 
   const { input } = useParams();
 
-//   useEffect(() => {
-//     const fetchStory = async () => {
-//       if (didRun) return;
-//       try {
-//         const test = await getStory(input);
-//         console.log("Received story:", test);
-        
-//         setStory(test);
-//         console.log("test before setting:", test.story.phrases);
-//         console.log("test after setting:", test);
-//       } catch (error) {
-//         console.error("Error:", error);
-//       }
-//       setDidRun(true);
-//     };
-//     fetchStory();
-//  }, []); 
-
   useEffect(() => {
-    setInterval(() => {
-      if (input === "1") {
-        setStory(testJSON1);
+    const fetchStory = async () => {
+      if (didRun) return;
+      try {
+        const test = await getStory(input);
+        console.log("Received story:", test);
+
+        setStory(test);
+        console.log("test before setting:", test.story.phrases);
+        console.log("test after setting:", test);
+      } catch (error) {
+        console.error("Error:", error);
       }
-      else if (input === "2") {
-        setStory(testJSON2);
+      setDidRun(true);
+    };
+    if (input !== "1" && input !== "2" && input !== "3") {
+      fetchStory();
     } else {
-      setStory(testJSON3);
+      setInterval(() => {
+        if (input === "1") {
+          setStory(testJSON1);
+        } else if (input === "2") {
+          setStory(testJSON2);
+        } else {
+          setStory(testJSON3);
+        }
+      }, 5000);
     }
-    }
-    , 5000);
-  } 
-  , [story]);
-  
+  }, []);
+
   return (
     <div className="">
       {story !== null ? (

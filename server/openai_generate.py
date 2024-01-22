@@ -2,7 +2,7 @@ import os
 from openai import OpenAI
 from dotenv import load_dotenv
 import json
-
+import re
 load_dotenv()
 
 def generate_children_book_phrases(user_input):
@@ -11,7 +11,7 @@ def generate_children_book_phrases(user_input):
     client = OpenAI(api_key=key)
 
     # Define the message content with the user's input
-    message = f"Generate a 1 phrases story paragraph for a children's book based on the following input (character's shouldn't have names, and don't use pronouns, simple story for children to read): {user_input}"
+    message = f"Generate a 5 phrase story paragraph with the first sentence being the title ending with a period, for a children's book based on the following input (character's shouldn't have names, and don't use pronouns, simple story for children to read): {user_input}"
 
     # Make the API call to generate phrases
     response = client.chat.completions.create(
@@ -35,7 +35,7 @@ def generate_children_book_phrases(user_input):
     generated_phrases_content = response.choices[0].message.content
     
     # Split the generated content into separate phrases
-    phrases = generated_phrases_content.split('.')
+    phrases = re.split(r'[.!?]\s*', generated_phrases_content)
 
     # Create a dictionary to store the phrases as key-value pairs with integers as keys
     generated_phrases_dict = {}
