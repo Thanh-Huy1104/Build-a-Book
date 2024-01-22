@@ -2,7 +2,7 @@
     background-image: url("../../assets/empty_background.png");
     background-position: center;
     background-size: 100%;
-    padding-bottom: 50px;
+    padding-bottom: 0px;
 }
 @font-face {
     font-family: LfL;
@@ -44,6 +44,15 @@
     padding: 0px 250px;
     font-size: 27px;
     line-height: 32px;
+}
+
+.About--p2 span{
+    font-family: LFL;
+    color: white;
+    font-size: 27px;
+    line-height: 32px;
+    font-weight: 900;
+    text-shadow: 0 5px #00000025;
 }
 
 .About--div {

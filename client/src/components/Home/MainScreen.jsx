@@ -54,7 +54,7 @@ export const MainScreen = () => {
     timeoutId = setTimeout(() => {
       console.log("I have finished");
       setIsAppearing(true);
-    }, 2000);
+    }, 500);
   };
 
   return (
