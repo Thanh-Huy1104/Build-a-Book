@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { useState } from "react";
 import bgImage from "../../assets/Main_Background.png";
 import emptyBg from "../../assets/empty_background.png";
@@ -14,9 +14,22 @@ export const MainScreen = () => {
   const navigate = useNavigate();
   const [isClicked, setIsClicked] = useState(false);
   const [isAppearing, setIsAppearing] = useState(false);
+  const inputRef = useRef(null);
+  const buttonRef = useRef(null);
 
   const handleClick = () => {
     setIsClicked(!isClicked);
+  };
+
+  const handleContainerClick = (event) => {
+    if (
+      inputRef.current &&
+      !inputRef.current.contains(event.target) &&
+      buttonRef.current &&
+      !buttonRef.current.contains(event.target)
+    ) {
+      setIsClicked(false);
+    }
   };
 
   const handleInputChange = (event) => {
@@ -48,7 +61,10 @@ export const MainScreen = () => {
     <div className="main_screen">
       <img src={emptyBg} alt="Background Image" className="img_bg" />
       <CoOlBaCkGrOuNd />
-      <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-white">
+      <div
+        className="absolute inset-0 z-10 flex flex-col items-center justify-center text-white"
+        onClick={handleContainerClick}
+      >
         <svg viewBox="-70 160 700 360">
           <path id="curve" fill="transparent" d="M 110 300 q 150 -200 340 0" />
           <text width="1500" className="curved-text">
@@ -100,7 +116,8 @@ export const MainScreen = () => {
           <span>t</span>
         </h1>
         <input
-          // onBlur={handleClick}
+          ref={inputRef}
+          onBlur={handleClick}
           onChange={handleInputChange}
           onKeyDown={handleEnterPress}
           onMouseOver={(e) => {
@@ -158,6 +175,7 @@ export const MainScreen = () => {
             transition: "transform 0.3s ease-out, opacity 0.3s ease-out",
             pointerEvents: isClicked ? "none" : "auto",
           }}
+          ref={buttonRef}
         >
           Create your Story
         </button>
