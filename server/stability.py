@@ -50,8 +50,8 @@ def stability_call(text_prompts):
     images = []
     for i, image in enumerate(data["artifacts"]):
         img_base64 = image["base64"]
-        with open(f'./out/txt2img_{image["seed"]}.png', "wb") as f:
-            f.write(base64.b64decode(img_base64))
+        # with open(f'./out/txt2img_{image["seed"]}.png', "wb") as f:
+        #     f.write(base64.b64decode(img_base64))
         images.append({"base64": img_base64})
 
     return images  # Return the list of image data as JSON

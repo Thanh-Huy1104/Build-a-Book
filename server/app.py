@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS  # Import CORS
 import openai_generate  # Import your OpenAI generation function
 import stability  # Import your image generation function
+import json
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
@@ -24,7 +25,12 @@ def get_story_and_images():
         images[key] = phrase_images
 
     # Return the generated story and images as JSON in the response
-    return jsonify(images=images, story=generated_story)
+    output = jsonify(images=images, story=generated_story)
+    
+    with open('output.json', 'w') as outfile:
+        json.dump({'images': images, 'story': generated_story}, outfile, indent=4)
+
+    return output
 
 if __name__ == '__main__':
     app.run(debug=True, host='localhost', port=3000)
