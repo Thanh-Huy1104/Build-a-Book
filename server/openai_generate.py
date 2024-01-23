@@ -11,7 +11,7 @@ def generate_children_book_phrases(user_input):
     client = OpenAI(api_key=key)
 
     # Define the message content with the user's input
-    message = f"Generate a 5 phrase story paragraph with the first sentence being the title ending with a period, for a children's book based on the following input (character's shouldn't have names, and don't use pronouns, simple story for children to read): {user_input}"
+    message = f"Generate a 10 phrase story paragraph with the first sentence being the title ending with a period, for a children's book based on the following input (character's shouldn't have names, and don't use pronouns, simple story for children to read): {user_input}"
 
     # Make the API call to generate phrases
     response = client.chat.completions.create(

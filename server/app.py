@@ -1,15 +1,18 @@
 from flask import Flask, request, jsonify
-from flask_cors import CORS  # Import CORS
-import openai_generate  # Import your OpenAI generation function
-import stability  # Import your image generation function
+from flask_cors import CORS
+import openai_generate
+import stability
 import json
+import threading
 
 app = Flask(__name__)
-CORS(app)  # Enable CORS for all routes
+CORS(app)
+
+def generate_images_thread(phrase, key, images):
+    images[key] = stability.stability_call(phrase)
 
 @app.route('/getStory', methods=['POST'])
 def get_story_and_images():
-    # Get user input from the request
     user_input = request.json.get('user_input')
 
     # Generate the children's book story based on user input using OpenAI
@@ -18,13 +21,20 @@ def get_story_and_images():
     # Split the generated content into separate phrases
     phrases = generated_story['phrases']
 
-    # Generate images for each phrase using the stability function
+    # Container for image results
     images = {}
-    for key, phrase in phrases.items():
-        phrase_images = stability.stability_call(phrase)
-        images[key] = phrase_images
+    image_threads = []
 
-    # Return the generated story and images as JSON in the response
+    # Starting threads for image generation
+    for key, phrase in phrases.items():
+        thread = threading.Thread(target=generate_images_thread, args=(phrase, key, images))
+        thread.start()
+        image_threads.append(thread)
+
+    # Waiting for all image generation threads to complete
+    for thread in image_threads:
+        thread.join()
+
     output = jsonify(images=images, story=generated_story)
     
     with open('output.json', 'w') as outfile:
